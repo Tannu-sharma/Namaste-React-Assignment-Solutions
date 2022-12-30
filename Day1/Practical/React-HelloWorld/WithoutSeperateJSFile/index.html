@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World in REACT</title>
+  </head>
+  <body>
+    <div id="header">Header</div>
+    <!-- This is how we can merge react with other projects/languages/frameworks etc -->
+    <!--react is only running inside this root div, others are normal html elements-->
+    <div id="root">
+      <!-- below script code add this heading inside root div -->
+      <!-- <h1 id = "headingID">HELLO WORLD IN REACT!!</h1> -->
+    </div>
+    <div id="footer">Footer</div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      // Creating H1 in pure react
+      const heading = React.createElement(
+        "h1",
+        {
+          id: "headingID",
+          className: "headingClass",
+        },
+        "HELLO WORLD IN REACT!!"
+      );
+      console.log("heading", heading); //every react element is object
+
+      //here we are telling react that root is our root element
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      //render method takes our react element and modifies our DOM
+      root.render(heading);
+    </script>
+    <!-- <script defer src="script.js"></script> -->
+  </body>
+</html>
